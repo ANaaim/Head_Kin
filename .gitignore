@@ -1,0 +1,12 @@
+/create_model_from_c3d.py
+/Data
+/Head.bioMod
+/Head_S4.bioMod
+/lower_body.bioMod
+/lower_body_cleaned.biomod
+/Pdr_sa_imp-s4_32_30deg.csv
+/remove_technical_marker.py
+/right_knee.c3d
+/right_knee_change_marker.c3d
+/static_lower_body.c3d
+/__pycache__
