@@ -77,11 +77,11 @@ def model_creation_from_measured_data(static_trial_path: Path, model_name: str,
                 second_axis=Axis(name=Axis.Name.Z, start="L_ear", end="R_ear"),
                 axis_to_keep=Axis.Name.Z,
             ),
-            mesh=Mesh(("R_ear", "L_ear", "Occ", "Up_head", "Front_head"), is_local=False),
+            mesh=Mesh(("R_ear", "L_ear", "Occ", "Up_head", "Front_Head"), is_local=False),
         ))
     
     for ind in ind_point_to_add:
-        reduced_model.segments["Head"].add_marker(Marker(f"New_00{ind}", is_technical=True, is_anatomical=True))
+        reduced_model.segments["Head"].add_marker(Marker(f"Tech_{ind:02d}", is_technical=True, is_anatomical=True))
 
     # Put the model together, print it and print it to a bioMod file
     model_real = reduced_model.to_real(static_trial)
