@@ -40,8 +40,6 @@ def main(filename, model_name, show: bool = True):
     q_recons = IK.solve()
     q_2_export = q_recons[[dict_dof["Head_RotZ"]]]
     
-    visualize = False
-
 
     # export a csv of the kinematics containing the head rotation and the first frame time 
     
@@ -61,7 +59,7 @@ def main(filename, model_name, show: bool = True):
     df.to_csv(name_csv, index=False)
     print(f"Exported kinematics to {name_csv}")
     
-    if visualize:
+    if show:
         nb_seconds = 3
         t_span = np.linspace(0, nb_seconds, nb_frames)
         model.name = "toto"
@@ -73,6 +71,8 @@ def main(filename, model_name, show: bool = True):
         viz = PhaseRerun(t_span)
         viz.add_animated_model(model_rerun, q_recons,tracked_markers=PyoMarkers(data=markers, channels=markerNames,show_labels=False))
         viz.rerun("msk_model")
+        # pause to see the model
+        input("Press Enter to continue...")
 
 
 if __name__ == "__main__":

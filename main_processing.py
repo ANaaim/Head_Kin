@@ -29,7 +29,7 @@ for subject in list_subjects_to_process:
                                     animate_model=False)
     for dynamic_file in dynamic_files:
         print(f"Processing dynamic file {dynamic_file} for subject {subject}")
-        kinematics.main(str(dynamic_file), f"Head_{subject}.bioMod")
+        kinematics.main(str(dynamic_file), f"Head_{subject}.bioMod",show=True)
     # kinematics.main(f"Data/{subject}/Pdr_sa_imp-s4_32_30deg.c3d", f"Head_{subject}.bioMod")
     # kinematics.main(f"Data/{subject}/Pdr_sa_imp-s4_33_45deg.c3d", f"Head_{subject}.bioMod")
     # kinematics.main(f"Data/{subject}/static_S4.c3d", f"Head_{subject}.bioMod")
